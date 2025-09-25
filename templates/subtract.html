@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Flask Math</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="{{ url_for('home') }}">Home</a> |
+        <a href="{{ url_for('add', a=7, b=5) }}">Add</a> |
+        <a href="{{ url_for('subtract', a=7, b=5) }}">Subtract</a> |
+        <a href="{{ url_for('multiply', a=9, b=8) }}">Multiply</a> |
+      </nav>
+      <hr />
+    </header>
+    <h1>Subtract</h1>
+    <p>{{ a }} - {{ b }} = <strong>{{ total }}</strong></p>
+  </body>
+</html>
