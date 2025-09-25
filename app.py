@@ -13,21 +13,15 @@ def add(a: int, b: int):
     total = a + b
     return render_template("add.html", a=a, b=b, total=total)
 
-@app.get("/reverse")
-def reverse():
-    text = request.args.get("text", "")
-    reversed_text = text[::-1]
-    return render_template("reverse.html", text=text, reversed_text=reversed_text)
+@app.get("/subtract/<int:a>/<int:b>")
+def subtract(a: int, b: int):
+    total = a - b
+    return render_template("subtract.html", a=a, b=b, total=total)
 
-@app.get("/about")
-def about():
-    pages = [
-        ("Home", url_for("home")),
-        ("Add", url_for("add", a=7, b=5)),
-        ("Reverse", url_for("reverse") + "?text=Flask"),
-        ("About", url_for("about")),
-    ]
-    return render_template("about.html", pages=pages)
+@app.get("/multiply/<int:a>/<int:b>")
+def multiply(a: int, b: int):
+    total = a * b
+    return render_template("multiply.html", a=a, b=b, total=total)
 
 if __name__ == "__main__":
     app.run(debug=True)
